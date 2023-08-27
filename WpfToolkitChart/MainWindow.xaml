@@ -3,11 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
         xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" x:Class="WpfToolkitChart.MainWindow"
-        Title="MainWindow" Height="1228.8" Width="3637.05">
-      
-    
+        Title="MainWindow" Height="1228.8" Width="3039">
+
+
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0">
-        <Grid  Height="1228.8" Width="3637.05">
+        <Grid  Height="1229" Width="3031">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1500"/>
                 <ColumnDefinition Width="1500"/>
@@ -28,12 +28,12 @@
             <chartingToolkit:Chart Grid.Row="1" Grid.Column="0" Title="L2">
                 <chartingToolkit:LineSeries  x:Name="lineChartL2"  DataPointStyle="{DynamicResource DataPointStyle1}" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True"/>
             </chartingToolkit:Chart>
-         
+
             <chartingToolkit:Chart Grid.Row="2" Grid.Column="0"   Title="L3">
                 <chartingToolkit:LineSeries  x:Name="lineChartL3"  DataPointStyle="{DynamicResource DataPointStyle1}" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True"/>
             </chartingToolkit:Chart>
-          
-            
+
+
             <chartingToolkit:Chart Grid.Row="3" Grid.Column="0" Title="L4">
                 <chartingToolkit:LineSeries  x:Name="lineChartL4"   DataPointStyle="{DynamicResource DataPointStyle1}" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True"/>
             </chartingToolkit:Chart>
@@ -41,38 +41,38 @@
             <chartingToolkit:Chart Grid.Row="4" Grid.Column="0"   Title="L5">
                 <chartingToolkit:LineSeries x:Name="lineChartL5" DataPointStyle="{DynamicResource DataPointStyle1}" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True"/>
             </chartingToolkit:Chart>
-          
+
             <chartingToolkit:Chart Grid.Row="5" Grid.Column="0"   Title="L6">
                 <chartingToolkit:LineSeries x:Name="lineChartL6" DataPointStyle="{DynamicResource DataPointStyle1}" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True"/>
             </chartingToolkit:Chart>
-            
-            
-            
+
+
+
             <chartingToolkit:Chart Grid.Row="0" Grid.Column="1"  Title="V1">
                 <chartingToolkit:LineSeries x:Name="lineChartV1"  DataPointStyle="{DynamicResource DataPointStyle1}" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True"/>
             </chartingToolkit:Chart>
-            
+
             <chartingToolkit:Chart Grid.Row="1" Grid.Column="1"  Title="V2">
                 <chartingToolkit:LineSeries x:Name="lineChartV2"   DataPointStyle="{DynamicResource DataPointStyle1}" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True"/>
             </chartingToolkit:Chart>
-         
+
             <chartingToolkit:Chart Grid.Row="2" Grid.Column="1"   Title="V3">
                 <chartingToolkit:LineSeries x:Name="lineChartV3" DataPointStyle="{DynamicResource DataPointStyle1}" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True"/>
             </chartingToolkit:Chart>
-          
-            
+
+
             <chartingToolkit:Chart Grid.Row="3" Grid.Column="1"   Title="V4">
                 <chartingToolkit:LineSeries x:Name="lineChartV4" DataPointStyle="{DynamicResource DataPointStyle1}" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True"/>
             </chartingToolkit:Chart>
-          
+
             <chartingToolkit:Chart Grid.Row="4" Grid.Column="1"   Title="V5">
                 <chartingToolkit:LineSeries x:Name="lineChartV5" DataPointStyle="{DynamicResource DataPointStyle1}" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True"/>
             </chartingToolkit:Chart>
-          
+
             <chartingToolkit:Chart Grid.Row="5" Grid.Column="1"   Title="V6">
                 <chartingToolkit:LineSeries x:Name="lineChartV6" DataPointStyle="{DynamicResource DataPointStyle1}" DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" IsSelectionEnabled="True"/>
             </chartingToolkit:Chart>
-          
+
         </Grid>
 
     </ScrollViewer>
