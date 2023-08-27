@@ -1,0 +1,76 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+namespace BLL
+{
+    public class Service
+    {
+        /// <summary>
+        ///Convert text Data To Decimal
+        /// </summary>
+        /// <param name="address"></param>
+        private List<KeyValuePair<int, double>> ConvertToDigit(string address)
+        {
+            List<int> y = new List<int>();
+
+            string data = File.ReadAllText(address);
+
+            String[] spearator = { "Data:\r\n" };
+
+            String[] hexValuesSplit = data.Split(spearator,
+                   StringSplitOptions.RemoveEmptyEntries);
+
+            string arr = hexValuesSplit.Skip(1).First();
+
+            List<string> newArr = new List<string>();
+            int p = 0;
+            string text = null;
+            for (int q = 0; q < arr.Length; q++)
+            {
+                if (arr[q] == '\n')
+                {
+                    text = arr.Substring(p, q - p - 1);
+                    newArr.Add(text);
+                    p = q + 1;
+                }
+            }
+
+            foreach (var line in newArr)
+            {
+
+                byte[] x = new byte[64];
+                var i = 0;
+
+                foreach (string hex in line.Split(new char[] { ' ' }))
+                {
+                    x[i++] = Convert.ToByte(hex, 16);
+                }
+
+                byte[] a = new byte[2];
+                for (int c = 12; c < x.Length; c += 19)
+                {
+                    a[0] = x[c + 1];
+                    a[1] = x[c];
+                    var g = BitConverter.ToInt16(a, 0);
+                    y.Add(g);
+                }
+            }
+
+            const double Resolution = 4.0 * 1000 / 6 / 32767;
+            List<KeyValuePair<int, double>> convertedList = new List<KeyValuePair<int, double>>();
+            int Xaxis = 0;
+            foreach (var item in y)
+            {
+                var t = item * Resolution;
+                Xaxis += 1;
+                convertedList.Add(new KeyValuePair<int, double>(Xaxis, t));
+
+            }
+
+
+            return convertedList;
+        }
+    }
+}
