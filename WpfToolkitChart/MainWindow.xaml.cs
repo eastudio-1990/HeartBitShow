@@ -114,6 +114,10 @@ namespace WpfToolkitChart
             for (int i = 0; i < L1.Count; i++)
             {
                 Xaxis1 += 1;
+                if (Xaxis1==5000)
+                {
+                    break;
+                }
                 convertedList1.Add(new KeyValuePair<int, double>(Xaxis1, L1[i] * Resolution));
                 convertedList2.Add(new KeyValuePair<int, double>(Xaxis1, L2[i] * Resolution));
                 convertedList3.Add(new KeyValuePair<int, double>(Xaxis1, L3[i] * Resolution));
@@ -121,13 +125,20 @@ namespace WpfToolkitChart
                 convertedList5.Add(new KeyValuePair<int, double>(Xaxis1, L5[i] * Resolution));
                 convertedList6.Add(new KeyValuePair<int, double>(Xaxis1, L6[i] * Resolution));
             }
-
+            
             lineChartL1.DataContext = convertedList1;
             lineChartL2.DataContext = convertedList2;
             lineChartL3.DataContext = convertedList3;
             lineChartL4.DataContext = convertedList4;
-           // lineChartL5.DataContext = convertedList5;
-            //lineChartL6.DataContext = convertedList6;
+            lineChartL5.DataContext = convertedList5;
+            lineChartL6.DataContext = convertedList6;
+            
+            lineChartV1.DataContext = convertedList1;
+            lineChartV2.DataContext = convertedList2;
+            lineChartV3.DataContext = convertedList3;
+            lineChartV4.DataContext = convertedList4;
+            lineChartV5.DataContext = convertedList5;
+            lineChartV6.DataContext = convertedList6;
 
         }
 
