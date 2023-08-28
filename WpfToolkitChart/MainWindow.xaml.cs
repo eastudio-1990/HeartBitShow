@@ -29,7 +29,7 @@ namespace WpfToolkitChart
     public const double Resolution = 4.0 * 1000 / 6 / 32767;
         private void ShowCharts()
         {
-            string data = File.ReadAllText(@"D:\DgDena\WpfToolkitChart\WpfToolkitChart\a.txt");
+            string data = File.ReadAllText(@"a.txt");
             String[] spearator = { "Data:\r\n" };
             String[] hexValuesSplit = data.Split(spearator, StringSplitOptions.RemoveEmptyEntries);
             string arr = hexValuesSplit.Skip(1).First();
